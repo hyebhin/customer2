@@ -4,27 +4,9 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.itwillbs.mapper.MemberMapper">
 
-    <insert id="insertMember">
+    <insert id="insert"> <!-- id : Mapper인터페이스에 적은 메소드 명과 일치해야함-->
         INSERT INTO tbl_member (name, password)
-        VALUES (#{name}, #{password})
+        VALUES (#{name}, #{password}) <!-- 세미콜론 안찍는거 주의!! -->
     </insert>
-
-    <select id="readMember" resultType="com.itwillbs.domain.MemberVO">
-        SELECT * FROM tbl_member
-        WHERE mno = #{mno}
-    </select>
-
-    <update id="updateMember">
-        UPDATE tbl_member
-        SET
-            name = #{name},
-            password = #{password}
-        WHERE mno = #{mno}
-    </update>
-
-    <delete id="deleteMember">
-        DELETE FROM tbl_member
-        WHERE mno = #{mno}
-    </delete>
 
 </mapper>

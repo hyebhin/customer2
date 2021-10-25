@@ -1,19 +1,19 @@
 server:
   port: 8181
-  servlet:
-    context-path: /myapp
+#  servlet:
+#    context-path: /myapp
 
 spring:
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/testdb?serverTimezone=Asia/Seoul
-    username: java
-    password: java
+    username: root
+    password: 1234
 
-  mvc:
-    view:
-      prefix: /WEB-INF/views/
-      suffix: .jsp
+#  mvc:
+#    view:
+#      prefix: /WEB-INF/views/
+#      suffix: .jsp
 
 mybatis:
   mapper-locations:

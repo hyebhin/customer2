@@ -6,29 +6,14 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
-@RequiredArgsConstructor
+@RequiredArgsConstructor // 생성자를 통한 의존성 주입
 public class MemberServiceImpl implements MemberService {
 
-    private final MemberMapper memberMapper;
+    private final MemberMapper mmaper;
+    // @RequiredArgsConstructor로 생성하려면 final이나 @NonNull 키워드 필수!
 
     @Override
-    public void create(MemberVO memberVO) {
-        memberMapper.insertMember(memberVO);
+    public void create(MemberVO mvo) {
+        mmaper.insert(mvo);
     }
-
-    @Override
-    public MemberVO read(int mno) {
-        return memberMapper.readMember(mno);
-    }
-
-    @Override
-    public void update(MemberVO memberVO) {
-        memberMapper.updateMember(memberVO);
-    }
-
-    @Override
-    public void delete(int mno) {
-        memberMapper.deleteMember(mno);
-    }
-
 }
