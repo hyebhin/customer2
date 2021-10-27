@@ -17,3 +17,14 @@ public class MemberServiceImpl implements MemberService {
         mmaper.insert(mvo);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
